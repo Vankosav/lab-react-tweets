@@ -39,9 +39,21 @@ const tweetsArray = [
 function App() {
   return (
     <div className="App">
-      <Tweet tweet={ tweetsArray[0]} />
-      <Tweet tweet={ tweetsArray[1]} />
-      <Tweet tweet={ tweetsArray[2]} />
+      {/*<Tweet userName={ tweetsArray[0].user.name} userImage={tweetsArray[0].user.image} userHandle={tweetsArray[0].user.handle} timestamp={tweetsArray[0].timestamp} message={tweetsArray[0].message}/>
+      <Tweet userName={ tweetsArray[1].user.name} userImage={tweetsArray[1].user.image} userHandle={tweetsArray[1].user.handle} timestamp={tweetsArray[1].timestamp} message={tweetsArray[1].message}/>
+      <Tweet userName={ tweetsArray[2].user.name} userImage={tweetsArray[2].user.image} userHandle={tweetsArray[2].user.handle} timestamp={tweetsArray[2].timestamp} message={tweetsArray[2].message}/>*/}
+
+      {tweetsArray.map((tweet) => {
+        return (
+        <Tweet
+          image={tweet.user.image}
+          name={tweet.user.name}
+          handle={tweet.user.handle}
+          timestamp={tweet.timestamp}
+          message={tweet.message}
+        />
+        );
+      })}
     </div>
   );
 }
